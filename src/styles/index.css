@@ -1,11 +1,17 @@
-/* 
-
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #fdf6e3; /* warm paper color */
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0,0,0,0.04) 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 40%, rgba(0,0,0,0.05) 0 2px, transparent 3px),
+    radial-gradient(600px 400px at 50% 50%, rgba(139, 94, 60, 0.08), transparent 80%),
+    linear-gradient(90deg, rgba(120, 90, 60, 0.05) 1px, transparent 1px);
+  background-size: 
+    300px 300px,
+    250px 250px,
+    100% 100%,
+    4px 100%;
+  background-blend-mode: multiply;
+  filter: contrast(1.05) brightness(0.98);
+}
