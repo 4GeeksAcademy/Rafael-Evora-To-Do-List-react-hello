@@ -15,3 +15,15 @@ body {
   background-blend-mode: multiply;
   filter: contrast(1.05) brightness(0.98);
 }
+
+.task-item .delete-btn {
+  visibility: hidden;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.task-item:hover .delete-btn {
+  visibility: visible;
+}

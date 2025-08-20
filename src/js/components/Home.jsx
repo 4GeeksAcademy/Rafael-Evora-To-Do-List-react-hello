@@ -22,7 +22,7 @@ const Home = () => {
 
   return (
     <div className="text-center">
-      <h1>To-do's</h1>
+      <h1>todos</h1>
       <div>
         <input
           type="text"
@@ -35,31 +35,47 @@ const Home = () => {
         />
         <button onClick={addTask}>Add</button>
         <ul id="task-list" className="card">
-          {tasks.map((task, idx) => (
+          {tasks.length === 0 ? (
             <li
-              key={idx}
-              onClick={() => toggleSelect(idx)}
               style={{
-                cursor: "pointer",
-                backgroundColor: selected === idx ? "#f0f0f0" : "transparent",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                padding: "5px",
-                borderBottom: "1px solid #ddd"
+                textAlign: "center",
+                color: "#888",
+                fontStyle: "italic",
+                padding: "10px"
               }}
             >
-              {task}
-              <button
-                onClick={(e) => {
-                  e.stopPropagation(); // prevent selecting when deleting
-                  deleteTask(idx);
+              No tasks, add a task
+            </li>
+          ) : (
+            tasks.map((task, idx) => (
+              <li
+                key={idx}
+                onClick={() => toggleSelect(idx)}
+                className="task-item"
+                style={{
+                  cursor: "pointer",
+                  backgroundColor: selected === idx ? "#f0f0f0" : "transparent",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  padding: "5px",
+                  borderBottom: "1px solid #ddd",
+                  position: "relative"
                 }}
               >
-                ❌
-              </button>
-            </li>
-          ))}
+                - {task}
+                <button
+                  className="delete-btn"
+                  onClick={(e) => {
+                    e.stopPropagation(); // prevent selecting when deleting
+                    deleteTask(idx);
+                  }}
+                >
+                  ❌
+                </button>
+              </li>
+            ))
+          )}
         </ul>
       </div>
     </div>
