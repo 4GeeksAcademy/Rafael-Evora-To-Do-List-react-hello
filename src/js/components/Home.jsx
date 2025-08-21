@@ -22,7 +22,7 @@ const Home = () => {
 
   return (
     <div className="text-center">
-      <h1>todos</h1>
+      <h1>My toDo List</h1>
       <div>
         <input
           type="text"
